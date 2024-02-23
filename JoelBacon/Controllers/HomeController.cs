@@ -50,11 +50,20 @@ namespace Mission06_Lush.Controllers
             
         }
 
+        //public IActionResult MovieList()
+        //{
+        //    var movieSet = _context.Movies.Include(x => x.Category)
+        //        .OrderBy(x => x.MovieId).ToList();
+
+        //    return View(movieSet);
+        //}
+
+        [HttpGet]
         public IActionResult MovieList()
         {
-            var movieSet = _context.Movies.Include(x => x.Category)
-                .OrderBy(x => x.MovieId).ToList();
-
+            var movieSet = _context.Movies
+                .Include("Category")
+                .ToList();
             return View(movieSet);
         }
 

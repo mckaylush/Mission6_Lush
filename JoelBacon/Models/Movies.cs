@@ -16,10 +16,10 @@ namespace Mission06_Lush.Models
         [Required(ErrorMessage = "Please enter the movie title")]
         public string Title { get; set;}
 
+        [Required(ErrorMessage = "Please enter the year")]
+
         [Range(1888, int.MaxValue, ErrorMessage ="Movie has to be made between 1888 and 2025")]
         public int Year { get; set; }
-
-        [Required(ErrorMessage = "Please enter the Director")]
         public string? Director { get; set; }
         public string? Rating { get; set; }
         [Required(ErrorMessage = "Please enter if the movie was edited")]
